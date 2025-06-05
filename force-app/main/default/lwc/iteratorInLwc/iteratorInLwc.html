@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="My Task List">
+        <template for:each={taskList} for:item="myTask">
+            <div key={myTask.id}>
+                {myTask.taskName} - {myTask.taskPriority} - {myTask.taskStatus}
+            </div>
+        </template>
+        <p slot="footer">Task for the day!</p>
+    </lightning-card>
+
+    <lightning-card title="My Task List using Iterator">
+
+
+        <template iterator:task={taskList}>
+
+
+            <template lwc:if={task.first}>
+                TOP PRIORITY TASK:
+                {task.value.taskName} - {task.value.taskPriority} - {task.value.taskStatus}
+            </template>>
+
+            <div key={task.value.id}>
+                {task.value.taskName} - {task.value.taskPriority} - {task.value.taskStatus}
+            </div>
+
+            <template lwc:if={task.last}>
+                LEAST/LAST PRIORITY TASK:
+                {task.value.taskName} - {task.value.taskPriority} - {task.value.taskStatus}
+            </template>>
+
+        </template>
+        <p slot="footer">Task for the day!</p>
+    </lightning-card>
+</template>

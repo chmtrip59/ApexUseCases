@@ -1,0 +1,13 @@
+<template>
+    Container Component <br>
+
+    Did you find any product in the inventory? {productsFound} <br/>
+    <template iterator:task={productList}>
+        <p key={task.id}>
+            {task.value.name}
+        </p>
+    </template>
+    
+
+    <c-child-component></c-child-component>>
+</template>

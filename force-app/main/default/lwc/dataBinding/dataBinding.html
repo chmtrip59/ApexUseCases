@@ -1,0 +1,21 @@
+<template>
+    <lightning-card class="slds-card" title="One-way Binding Example" >
+        Hi {userName} ! 
+        <br>
+        You are currently at user score {subscriberScore} as of {currentTime}.
+        <br>
+        Your total watch duration is {totalWatchTime} minutes.
+    </lightning-card>
+    <lightning-card title="Two-way Binding Example">
+        <lightning-input type="text" value={memberStatus} onchange={updateMemberStatus} label="Enter your current status here"></lightning-input>
+    </lightning-card>
+    <div class="slds-card">
+        Typed status is : {memberStatus}
+    </div>
+    <lightning-card class="slds-card" title = "Getter and Setter Example">
+        <p class="slds-p-around_small">{minutesWatched}</p>
+
+    <lightning-input type="number"  onchange={handleWatched} label="Enter the number of minutes you watched"></lightning-input>
+    <p class="slds-p-around_small">{minutesWatched}</p>
+    </lightning-card>
+</template>
