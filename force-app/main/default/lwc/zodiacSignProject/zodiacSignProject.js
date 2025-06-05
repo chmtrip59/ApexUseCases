@@ -1,6 +1,8 @@
-import { LightningElement } from 'lwc';
+import { LightningElement,track } from 'lwc';
 
 export default class ZodiacSignProject extends LightningElement {
+
+  @track userProfile = {};
 
     zodiacTraits = [
     {
@@ -88,4 +90,38 @@ export default class ZodiacSignProject extends LightningElement {
       trait: "You were born to roam—physically, mentally, and spiritually. Adventure excites you, and honesty guides you. Just remember: not everyone can keep up, so slow down occasionally and let someone catch their breath beside you."
     }
   ];
+
+
+ userName;
+  userBirthDate;
+  handleNameChange(event){
+    this.userName = event.target.value;
+  }
+  handleDateChange(event){
+    this.userBirthDate = event.target.value;
+  }
+  handleZodiacSign(){
+    // console.log("User name: "  +this.userName);
+    // console.log("Birth date :" +this.userBirthDate);
+    let userDob =new Date(this.userBirthDate);
+    const userMonth = userDob.getMonth() + 1;
+    const userDay = userDob.getDate();
+    this.userProfile = this.checkZoidiacSign(userMonth,userDay);
+
+  }
+
+  checkZoidiacSign(month,day){
+    for(let sign of this.zodiacTraits){
+      const [fromMonth,fromDay] = sign.from.split('-').map(Number);
+      const [toMonth,toDay] = sign.to.split('-').map(Number);
+
+      if((month === fromMonth && day >= fromDay) || (month === toMonth && day <= toDay)){
+        //  console.log(`Your zodiac sign is ${sign.sign} ${sign.emoji} and traits are : ${sign.trait}`);
+        console.log('sign',JSON.stringify(sign));
+        return sign;
+      }
+    }
+  }
+
+
 }
