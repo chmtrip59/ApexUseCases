@@ -20,4 +20,9 @@ export default class OwnerComponent extends LightningElement {
             price: 300
         }
     ]
+
+    callChildMethod(){
+        // console.log('Parent method called to call child method from here!');
+        this.template.querySelector('c-container-component').handleParentCall();
+    }
 }

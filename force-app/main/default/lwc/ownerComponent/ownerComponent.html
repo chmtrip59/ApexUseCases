@@ -1,7 +1,9 @@
 <template>
     <lightning-card title="Component Composition">
         Owner Component <br>
-        <c-container-component products-found = {productsFound} product-list = {productList}></c-container-component>
+        <lightning-button label ="Calll Child" onclick={callChildMethod}></lightning-button>
+        
+        <c-container-component products-found = true product-list = {productList} ></c-container-component>
     </lightning-card>
 
 </template>

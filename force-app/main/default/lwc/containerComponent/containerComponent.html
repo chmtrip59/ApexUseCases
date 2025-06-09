@@ -1,13 +1,25 @@
 <template>
     Container Component <br>
 
-    Did you find any product in the inventory? {productsFound} <br/>
-    <template iterator:task={productList}>
-        <p key={task.id}>
-            {task.value.name}
-        </p>
-    </template>
-    
+    Did you find any product in the inventory? {productsFound} <br />
+    <!-- <template lwc:if={hasProductFound}>
+        <template for:each={productList} for:item="product">
+            <p key={product.id}>
+                Product ID: {product.id} <br />
+                Product Name: {product.name} <br />
+                Product Price: {product.price} <br />
+            </p>
+            <div key={product.id}>
+               <c-child-component product-id={product.id} product-name={product.name} 
 
-    <c-child-component></c-child-component>>
+            </div>
+    </template> -->
+     
+    <template lwc:if={parentCalled}>
+        Show that parent called the method to show this! It has not been called by the child or current component
+        itself.
+    </template>
+
+
+    <!-- <c-child-component></c-child-component>-->
 </template>
