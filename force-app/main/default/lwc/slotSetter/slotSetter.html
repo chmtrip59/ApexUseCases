@@ -1,3 +1,23 @@
 <template>
-    
+
+    <lightning-card title="Slot Setter Component" icon-name="custom:custom14">
+
+        <div class="slds-p-horizontal_medium">
+            <c-slot-child-setter>
+                <div class="slds-p-horizontal_medium">
+                    <p>This component is designed to set slots in a child component.</p>
+                    <p>Click the button below to set the slot content.</p>
+                </div><br><hr>
+                <div slot="Header">
+                    <p>I am Header</p>
+                </div>
+                <div slot="Body">
+                    <p>I am a Main Body</p>
+                </div>
+                <div slot="Footer">
+                    <p>I am a footer</p>
+                </div>
+            </c-slot-child-setter>
+        </div>
+    </lightning-card>
 </template>
