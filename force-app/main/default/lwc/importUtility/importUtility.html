@@ -1,6 +1,21 @@
 <template>
     <lightning-card title="Importing logo from static resource"><br />
+        The current loggedIn user is: {userId}<br />
+        <hr>
+        The current form factor is: {formFactor}<br />
+        The current locale is: {locale}<br />
+        The current currency is: {currency}<br />
+        The current language is: {lang}<br />
+        <hr>
+        The label value is: {label}<br />
         <hr>
         <img height="250px" width="250px" src={myNewLogo} alt="Loading">
+
+        <template lwc:if={ShowInProd}>
+            <p>This is Production Environment</p>
+        </template>
+        <template lwc:else>
+            <p>This is Sandbox Environment</p>
+        </template>
     </lightning-card>
 </template>
