@@ -13,7 +13,7 @@ export default class DataBinding extends LightningElement {
     }
     _minutesWatched = this.totalWatch * 10;//Backing variable for getter and setter
 
-   get minutesWatched(){
+    get minutesWatched(){
         // return `The total watched duration is: ${this.totalWatch * 10}`;
         return this._minutesWatched;
     }
