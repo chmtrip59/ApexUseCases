@@ -2,10 +2,10 @@ import { LightningElement } from 'lwc';
 
 export default class EventNotificationChild extends LightningElement {
 
-    myPersonalProperty;
+    myPersonalProperty = {};
 
     handleThisClick(){
-        this.myPersonalProperty = 'I am a property in the child component';
+        this.myPersonalProperty = { id: 1 , name: 'Champak Chacha'}
 
         let pickedEvent = new CustomEvent('myevent',{
             detail: this.myPersonalProperty
