@@ -6,7 +6,7 @@ export default class LightningRecordPage extends LightningElement {
     // for record page if i put this on case record page it will same record for every other case id , to tackle this we can use recordId with api decorator
 
     @api recordId;
-    objectApiName = 'Case';
-    fields = ['CaseOwner','CaseNumber','Status' , 'Origin' , 'Priority' ,'Reason','Type'];
+    objectApiName = 'Account';
+    fields = ['AccountNumber','Name','AccountSource' , 'AnnualRevenue' , 'Industry' ,'Rating','Description'];
     
 }
